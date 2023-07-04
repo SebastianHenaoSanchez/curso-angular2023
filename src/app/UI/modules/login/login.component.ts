@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
     
   }
 
-  constructor(private formBuilder: FormBuilder){
+  constructor(private formBuilder: FormBuilder, private router: Router ){
 
   }
   ngOnInit(): void {
@@ -49,7 +50,12 @@ export class LoginComponent implements OnInit {
 
   login () {
     if (this.loginForm.valid){
-      alert('formulario valido')
+      var correo = this.loginForm.controls['email'].value;
+      var contraseña = this.loginForm.controls['password'].value;
+      
+      localStorage.setItem('token', correo + contraseña);
+      this.router.navigate(['/'])
+      console.log('formulario valido')
     } else {
       alert('formulario invalido')
     }

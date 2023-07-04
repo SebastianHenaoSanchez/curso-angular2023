@@ -12,9 +12,9 @@ const routes: Routes = [
   {
     path: '',
     component: DefaultComponent,
-    
+    canActivate: [Defaultauth],
     children: [
-      { path: '', component: HomeComponent, canActivate: [Defaultauth] },
+      { path: '', component: HomeComponent },
       { path: 'contact', component: ContactComponent }
     ]
   },
