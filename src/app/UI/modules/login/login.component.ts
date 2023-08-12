@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { UserUseCase } from '../../../domain/models/User/usecase/userUseCase';
+import { UserUseCase } from '../../../domain/models/usecase/user/userUseCase';
 import { User } from 'src/app/domain/models/User/user';
 
 @Component({
