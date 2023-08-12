@@ -9,9 +9,9 @@ import { Observable } from "rxjs";
 export class Defaultauth implements CanActivate {
     constructor(private router: Router) { }
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-        console.log("first")
         var token = localStorage.getItem('token');
-        if (token === 'a@a.comSebas1234*') {
+        //llamemo un servicio que indique que el token es valido
+        if (token) {
             return true;
 
         } else {
